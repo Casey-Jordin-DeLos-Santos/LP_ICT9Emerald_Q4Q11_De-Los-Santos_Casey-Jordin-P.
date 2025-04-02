@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BMI CALCULATOR</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<h2>BMI Calculator</h2>
+
+<style>
+
+h2{
+	text-align: center;
+}
+   
+
+ 
+</style>
+
+
+<div class="container" >
+
+	<p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. View the BMI tables or use the tool below to compute yours.
+
+Enter your weight and height using standard or metric measures.
+Select "Compute BMI" and your BMI will appear below. 
+
+BMI Categories:
+Underweight = <18.5
+Normal weight = 18.5–24.9
+Overweight = 25–29.9
+Obesity = BMI of 30 or greater
+
+What Next? Take Action Towards Better Health:
+
+Maintain a Healthy Weight
+
+Maintaining a healthy weight is important for your heart health.</p>
+
+<a href="url">https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm</a>
+<details>
+  <summary>Instructions</summary>
+  <p>Kindly input a certain amount to find out what your BMI is. It is for people to see if they are normal, obese, overweight, or underweight!!</p>
+</details>
+
+ <input type="text" class="form-control" placeholder="Weight in Kilograms" id="Kilograms"><br>
+        
+
+        <input type="text" class="form-control" placeholder="Weight in Meter" id="Meters"><br>
+
+        <button type="button" class="btn btn-success" onclick="meter()"> Calculate </button>
+
+        <h3 id="show_here">The Calculation is...</h3>
+
+</div>
+
+
+<script>
+
+function kilo() {
+ var kilo =document.getElementById('Kilograms').value;
+ var meters =document.getElementById('Meters').value;
+
+     if (isNaN(kilo) || isNaN(meters) || meters <= 0) {
+                document.getElementById("show_here").innerHTML = "Kindly input valid or right numbers please.";
+                return;
+            }
+
+
+
+}
+
+
+
+let bmi = kilo / (meters * meters);
+
+let result;
+if (bmi < 18.5) {
+   result= "Underweight";
+} else if (bmi >= 18.5 and <= 24.9){
+    result = "Normal Weight";
+} else if (bmi >=25 and <= 29.9
+){
+    result = "Overweight";
+} else if (bmi >=30){
+    result = "Obese"; 
+           
+        
+document.getElementById('show_here').inner.HTML = 'Your BMI is ${bmi.toFixed(2)}-$(result)';
+
+</script>
+
+
+
+
+</body>
+</html>
